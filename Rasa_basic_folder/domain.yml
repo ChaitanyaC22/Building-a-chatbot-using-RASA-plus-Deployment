@@ -1,0 +1,105 @@
+actions:
+- action_ask_budget
+- action_check_email
+- action_check_location
+- action_reset_slot
+- action_restart
+- action_search_restaurants
+- action_send_email
+- action_validate_cuisine
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_emailid
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_default
+- utter_email_sent
+- utter_goodbye
+- utter_greet
+- utter_loc_invalid
+- utter_loc_valid
+- utter_outofbox
+- utter_send_email
+entities:
+- affirm
+- budget
+- bye
+- cuisine
+- deny
+- email
+- greet
+- location
+intents:
+- location
+- restaurant_search
+- greet
+- budget
+- deny
+- goodbye
+- send_email
+- affirm
+responses:
+  utter_ask_budget:
+  - buttons:
+    - payload: Lesser than Rs. 300
+      title: Lesser than Rs. 300
+    - payload: Rs. 300 to 700
+      title: Rs. 300 to 700
+    - payload: More than 700
+      title: More than 700
+    text: What's your average budget for two people?
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Italian
+      title: Italian
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    - payload: Mexican
+      title: Mexican
+    - payload: American
+      title: American
+    text: What kind of cuisine would you like?
+  utter_ask_emailid:
+  - text: Please provide the email id to send restaurant details?
+  utter_ask_howcanhelp:
+  - text: How can I help you?
+  utter_ask_location:
+  - text: In what location?
+  utter_default:
+  - text: Sorry, I didn't quite understand you!
+  utter_email_sent:
+  - text: Sent
+  - text: Sent, Bon Appetit !
+  - text: Email Sent, see you soon!
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  - text: It is sad to see you go. Hope to see you soon again. Bye!
+  utter_greet:
+  - text: Hey there! Welcome to Foodie restaurant search bot. I can help you find restaurants based on your location and preferences. How may I assist you?
+  - text: Hi, Welcome to Foodie restaurant search bot. I can help you locate some good restaurants based on your location and preferences. How may I help you?
+  - text: Hey, How is it going? Welcome to Foodie restaurant search bot. I can help you find good restaurants based on your location and preferences. How may I assist you, today?
+  utter_loc_invalid:
+  - text: Sorry, we do not operate in this area yet.
+  utter_loc_valid:
+  - text: Location is valid!
+  utter_outofbox:
+  - text: Sorry, I didn't understand you. Could you please re-enter a valid request again?
+  utter_send_email:
+  - text: Should I send you the details of all the restaurants via email?
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  budget:
+    type: text
+  cuisine:
+    type: text
+  email:
+    type: text
+  location:
+    type: text
